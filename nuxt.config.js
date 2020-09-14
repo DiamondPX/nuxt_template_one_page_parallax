@@ -1,14 +1,16 @@
+const webpack = require("webpack");
+
 export default {
   /*
    ** Nuxt rendering mode
    ** See https://nuxtjs.org/api/configuration-mode
    */
-  ssr: false,
+  ssr: true,
   /*
    ** Nuxt target
    ** See https://nuxtjs.org/api/configuration-target
    */
-  target: 'static',
+  target: 'server',
   /*
    ** Headers of the page
    ** See https://nuxtjs.org/api/configuration-head
@@ -29,7 +31,20 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'preconnect', href: 'https://cdn.jsdelivr.net' },
       { rel: 'dns-prefetch', href: 'https://cdn.jsdelivr.net' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' },
+      { rel: 'stylesheet', href: '/css/one-page-parallax/app.min.css' },
     ],
+    script: [
+      { src: '/js/jquery.min.js', body: true },
+      { src: '/js/jquery-ui.min.js', body: true },
+      { src: '/js/bootstrap.bundle.min.js', body: true },
+      { src: '/js/jquery.paroller.min.js', body: true },
+      { src: '/js/js.cookie.js', body: true },
+      { src: '/js/pace.min.js', body: true },
+      { src: '/js/scrollMonitor.js', body: true },
+      { src: '/js/app.js', body: true },
+    ],
+    bodyAttrs: { 'data-spy':'scroll', 'data-target':'#header', 'data-offset':'51' }
   },
   /*
    ** Global CSS
@@ -95,6 +110,13 @@ export default {
    ** See https://nuxtjs.org/api/configuration-build/
    */
   build: {
+    plugins: [
+      new webpack.ProvidePlugin({
+        jQuery: 'jquery',
+        $: 'jquery',
+        'window.jQuery': 'jquery'
+      })
+    ],
     postcss: {
       preset: {
         features: {
