@@ -17,34 +17,83 @@ export default {
    */
   head: {
     title: process.env.npm_package_name || '',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    meta: [{
+        charset: 'utf-8'
+      },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1'
+      },
       {
         hid: 'description',
         name: 'description',
         content: process.env.npm_package_description || '',
       },
     ],
-    noscript: [{ innerHTML: 'Scripts are not supported', body: true }],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'preconnect', href: 'https://cdn.jsdelivr.net' },
-      { rel: 'dns-prefetch', href: 'https://cdn.jsdelivr.net' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' },
-      { rel: 'stylesheet', href: '/css/one-page-parallax/app.min.css' },
+    noscript: [{
+      innerHTML: 'Scripts are not supported',
+      body: true
+    }],
+    link: [{
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.ico'
+      },
+      {
+        rel: 'preconnect',
+        href: 'https://cdn.jsdelivr.net'
+      },
+      {
+        rel: 'dns-prefetch',
+        href: 'https://cdn.jsdelivr.net'
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700'
+      },
+      {
+        rel: 'stylesheet',
+        href: '/css/one-page-parallax/app.min.css'
+      },
     ],
-    script: [
-      { src: '/js/jquery.min.js', body: true },
-      { src: '/js/jquery-ui.min.js', body: true },
-      { src: '/js/bootstrap.bundle.min.js', body: true },
-      { src: '/js/jquery.paroller.min.js', body: true },
-      { src: '/js/js.cookie.js', body: true },
-      { src: '/js/pace.min.js', body: true },
-      { src: '/js/scrollMonitor.js', body: true },
-      { src: '/js/app.js', body: true },
+    script: [{
+        src: '/js/jquery.min.js',
+        body: true
+      },
+      {
+        src: '/js/jquery-ui.min.js',
+        body: true
+      },
+      {
+        src: '/js/bootstrap.bundle.min.js',
+        body: true
+      },
+      {
+        src: '/js/jquery.paroller.min.js',
+        body: true
+      },
+      {
+        src: '/js/js.cookie.js',
+        body: true
+      },
+      {
+        src: '/js/pace.min.js',
+        body: true
+      },
+      {
+        src: '/js/scrollMonitor.js',
+        body: true
+      },
+      {
+        src: '/js/app.js',
+        body: true
+      },
     ],
-    bodyAttrs: { 'data-spy':'scroll', 'data-target':'#header', 'data-offset':'51' }
+    bodyAttrs: {
+      'data-spy': 'scroll',
+      'data-target': '#header',
+      'data-offset': '51'
+    }
   },
   /*
    ** Global CSS
